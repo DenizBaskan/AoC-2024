@@ -5,7 +5,7 @@ const data = fs.readFileSync("./inputs/5.txt")
 .split("\n\n");
 
 const numbers = data[1].split("\n").map(line => { return line.split(",").map(Number) });
-let rules = {};
+const rules = {};
 
 data[0].split("\n").map(line => { return line.split("|").map(Number) }).forEach(([x, y]) => {
     if (!rules[x]) {
