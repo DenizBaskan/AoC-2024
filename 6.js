@@ -62,7 +62,9 @@ function compute(d) {
     return d;
 }
 
-console.log(compute(JSON.parse(JSON.stringify(data))).reduce((acc, line) => {
+const res = compute(JSON.parse(JSON.stringify(data)))
+
+console.log(res.reduce((acc, line) => {
     return acc + line.filter(v => v != "#" && v != ".").length;
 }, 0));
 
@@ -70,6 +72,10 @@ let total = 0;
 
 for (let row = 0; row < data.length; row++) {
     for (let col = 0; col < data.length; col++) {
+        if (res[row][col] == "#" || res[row][col] == ".") {
+            continue;
+        }
+
         const input = JSON.parse(JSON.stringify(data)) // cpy
         const prev = input[row][col];
         
@@ -83,4 +89,4 @@ for (let row = 0; row < data.length; row++) {
     }
 }
 
-console.log(total); // 22s
+console.log(total); // 4s
