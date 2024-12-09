@@ -101,7 +101,7 @@ for (let i = line.length - 1; i >= 0; i--) {
 }
 
 line.forEach((v, i) => {
-    if (v != "." && v != "#") {
+    if (v != ".") {
         checksum += i * Number(v);
     }
 })
