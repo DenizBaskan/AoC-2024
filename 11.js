@@ -5,6 +5,11 @@ let data = fs.readFileSync("./inputs/11.txt")
 .split(" ")
 .map(v => Number(v));
 
+/*
+Didnt think of the fact that there are so many repeated stones
+so ended up creating an insanely slow solution but oh well
+*/
+
 function blink(arr) {
     let replaced = []
 
@@ -68,4 +73,4 @@ for (let i = 0; i < 75; i++) {
     data = blink(data)
 }
 
-console.log(data.length + total) // 22s could prolly optimse futher but oh well
+console.log(data.length + total)
