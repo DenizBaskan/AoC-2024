@@ -108,16 +108,15 @@ while (true) {
         }
     }
 
-    if ((t-67)%103==0) { // change to ur shit
-        console.log(pic, t)
+    if (pic.includes("*******************************")) {
+        break
+        /*
+        Found out what a tree looks like from manually searching lol
+        */
     }
 
     t++;
 
 }
 
-/*
-
-Helper script for manual part 2 solve
-
-*/
+console.log(s + t + 1)
